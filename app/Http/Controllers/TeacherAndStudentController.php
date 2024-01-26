@@ -26,7 +26,8 @@ class TeacherAndStudentController extends Controller
             'name' => 'required',
             'age' => 'required|numeric',
             'address' => 'required',
-            'department' => 'required'
+            'course' => 'required',
+            'subject' => 'required'
         ]);
 
         $newstudent = Student::create($data);
@@ -47,19 +48,20 @@ class TeacherAndStudentController extends Controller
             'name' => 'required',
             'age' => 'required|numeric',
             'address' => 'required',
-            'department' => 'required'
+            'course' => 'required',
+            'subject' => 'required'
         ]);
 
         $student->update($data);
 
-        return redirect(route('index'))->with('success', 'Student updated successfully');
+        return redirect(route('index'))->with('success student', 'Student updated successfully');
     }
 
 
     public function delete_student(Student $student){
         $student->delete();
 
-        return redirect(route('index'))->with('success', 'Student deleted successfully');
+        return redirect(route('index'))->with('success student', 'Student deleted successfully');
     }
 
 
@@ -100,13 +102,13 @@ class TeacherAndStudentController extends Controller
 
         $teacher->update($data);
 
-        return redirect(route('index'))->with('success', 'Teacher updated successfully');
+        return redirect(route('index'))->with('success teacher', 'Teacher updated successfully');
     }
 
 
     public function delete_teacher(Teacher $teacher){
         $teacher->delete();
 
-        return redirect(route('index'))->with('success', 'Teacher deleted successfully');
+        return redirect(route('index'))->with('success teacher', 'Teacher deleted successfully');
     }
 }

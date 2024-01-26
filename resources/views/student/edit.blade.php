@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <p class="h1 text-center my-5">Edit Teacher Data</p>
+    <p class="h1 text-center my-5">Edit Student Data</p>
     <div>
         @if($errors->all())
         <ul>
@@ -24,32 +24,38 @@
     <div class="d-flex flex-column align-items-center justify-content-center" style="min-width: 100vh;">
     <div class="card" style="width: 18rem;">
         <div class="card-body">
-            <form method="post" action="{{route('teacher.update', ['teacher' => $teacher])}}">
+            <form method="post" action="{{route('student.update', ['student' => $student])}}">
                 @csrf
                 @method('put')
                 <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="{{ $teacher->name }}" />
+                <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="{{ $student->name }}" />
                 </div>
 
                 <div class="form-group">
                     <label for="age">Age</label>
-                    <input type="text" class="form-control" id="age" name="age" placeholder="Age" value="{{ $teacher->age }}" />
+                    <input type="text" class="form-control" id="age" name="age" placeholder="Age" value="{{ $student->age }}" />
                 </div>
 
                 <div class="form-group">
                     <label for="address">Address</label>
                     <input type="text" class="form-control" id="address" name="address" placeholder="Address"
-                        value="{{ $teacher->address }}" />
+                        value="{{ $student->address }}" />
                 </div>
 
                 <div class="form-group">
-                    <label for="department">Department</label>
-                    <input type="text" class="form-control" id="department" name="department" placeholder="Department"
-                        value="{{ $teacher->department }}" />
+                    <label for="course">Course</label>
+                    <input type="text" class="form-control" id="course" name="course" placeholder="Course"
+                        value="{{ $student->course }}" />
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-block">Edit Teacher Data</button>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject"
+                        value="{{ $student->subject }}" />
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Edit Student Data</button>
 
             </form>
         </div>

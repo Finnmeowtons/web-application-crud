@@ -57,10 +57,10 @@
         </tbody>
       </table>
       <div>
-        @if (session()->has('success'))
+        @if (session()->has('success teacher'))
         <div class="text-center">
             <div class="alert alert-success d-inline-block">
-                {{ session('success') }}
+                {{ session('success teacher') }}
             </div>
         </div>
         @endif
@@ -95,7 +95,8 @@
             <td class="align-middle">{{$student->name}}</td>
             <td class="align-middle">{{$student->age}}</td>  
             <td class="align-middle">{{$student->address}}</td>
-            <td class="align-middle">{{$student->department}}</td>
+            <td class="align-middle">{{$student->course}}</td>
+            <td class="align-middle">{{$student->subject}}</td>
             <td>
                 <a href="{{route('student.edit', ['student' => $student])}}">
                     <button class="btn btn-primary">
@@ -119,10 +120,10 @@
         </tbody>
       </table>
       <div>
-        @if (session()->has('success'))
+        @if (session()->has('success student'))
         <div class="text-center">
             <div class="alert alert-success d-inline-block">
-                {{ session('success') }}
+                {{ session('success student') }}
             </div>
         </div>
         @endif

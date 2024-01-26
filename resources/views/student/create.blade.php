@@ -8,12 +8,12 @@
     <title>Document</title>
 </head>
 <body>
-    <p class="h1 text-center my-5">Create Teacher Data</p>
+    <p class="h1 text-center my-5">Create Student Data</p>
     <div>
         @if($errors->all())
         <ul>
             @foreach($errors->all() as $error)
-                <li>{{$error}}</li>
+            <li>{{$error}}</li>
             @endforeach
         </ul>
         @endif
@@ -21,7 +21,7 @@
     <div class="d-flex flex-column align-items-center justify-content-center" style="min-width: 100vh;">
         <div class="card" style="width: 18rem;">
             <div class="card-body">
-                <form method="post" action="{{route('teacher.store')}}">
+                <form method="post" action="{{route('student.store')}}">
                     @csrf
                     @method('post')
                     <div class="form-group">
@@ -37,10 +37,14 @@
                         <input type="text" class="form-control" id="address" name="address" placeholder="Address" />
                     </div>
                     <div class="form-group">
-                        <label for="department">Department</label>
-                        <input type="text" class="form-control" id="department" name="department" placeholder="Department" />
+                        <label for="course">Course</label>
+                        <input type="text" class="form-control" id="course" name="course" placeholder="Course" />
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Save a New Data</button>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" />
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Save Student Data</button>
                 </form>
             </div>
         </div>
@@ -49,7 +53,5 @@
             <a href="{{route('index')}}" style="color: gray">Cancel Create</a>
         </div>
     </div>
-
-
 </body>
 </html>
